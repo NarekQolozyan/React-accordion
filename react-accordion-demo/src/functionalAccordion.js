@@ -26,12 +26,11 @@ function App() {
   return (
     <div className="App">
       {countries.map((country, index) => (
-        <div key={index}>
-          <div onClick={() => handleClick(index)} className="countries">
-            <p>{country.name} <span className="button">+</span></p>
+          <div onClick={() => handleClick(index)} className="countryDiv">
+            <p className="capitalName">{country.name}</p> <span className="plusCapital">+</span>
           </div>
           {activeIndex === index && (
-            <div className="capitals">{country.capital || "No capital found"}</div>
+            <div className="capitalDiv">{country.capital || "No capital found"}</div>
           )}
         </div>
       ))}
